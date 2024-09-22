@@ -22,9 +22,9 @@ public class ShippingChargeController {
     private ShippingChargeService shippingChargeService;
 
     @GetMapping("/{type}")
-    public ResponseEntity<ShippingChargeResponse> calculateShippingCharge(@Valid
+    public ResponseEntity<ShippingChargeResponse> calculateShippingCharge(
             @PathVariable String type,
-            @RequestBody ShippingChargeRequest request) {
+            @Valid @RequestBody ShippingChargeRequest request) {
 
         double shippingCharge = shippingChargeService.calculateShippingCharge(type, request);
 
